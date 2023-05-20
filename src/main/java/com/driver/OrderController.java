@@ -26,6 +26,7 @@ public class OrderController {
         orderService.addOrder(order);
         return new ResponseEntity<>("New order added successfully", HttpStatus.CREATED);
     }
+    
 
     @PostMapping("/add-partner/{partnerId}")
     public ResponseEntity<String> addPartner(@PathVariable String partnerId){
@@ -48,6 +49,7 @@ public class OrderController {
 
         return new ResponseEntity<>(order, HttpStatus.CREATED);
     }
+    
 
     @GetMapping("/get-partner-by-id/{partnerId}")
     public ResponseEntity<DeliveryPartner> getPartnerById(@PathVariable String partnerId){
@@ -91,9 +93,9 @@ public class OrderController {
         Integer countOfOrders = orderService.getCountOfUnassignedOrder();
 
         //Count of orders that have not been assigned to any DeliveryPartner
-
         return new ResponseEntity<>(countOfOrders, HttpStatus.CREATED);
     }
+    
 
     @GetMapping("/get-count-of-orders-left-after-given-time/{partnerId}")
     public ResponseEntity<Integer> getOrdersLeftAfterGivenTimeByPartnerId(@PathVariable String time, @PathVariable String partnerId){
