@@ -33,7 +33,6 @@ public class OrderRepository {
         DeliveryPartner partner = partnerDb.get(partnerId);
         partner.setNumberOfOrders(list.size());
         return "Added";
-
     }
 
     public Order getOrderById(String orderId) {
@@ -73,7 +72,6 @@ public class OrderRepository {
             orders.add(s);
         }
         return orders;
-
     }
 
     public int getCountOfUnassignedOrders() {
@@ -124,7 +122,6 @@ public class OrderRepository {
         time = sHour + ":" + sMin;
 
         return time;
-
     }
 
     public String deletePartnerById(String partnerId) {
